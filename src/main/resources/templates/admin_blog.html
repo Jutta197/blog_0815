@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin_blog.css">
+    <title>ブログ</title>
+</head>
+
+<body>
+    <header>
+        <h1><a href="admin_register.html"
+                style="text-decoration: none; color: #fff; transition: color 0.3s ease;">ブログ</a></h1>
+        <nav>
+            <ul class="button-list">
+                <li><a class="button" href="admin_blog.html">ホーム</a></li>
+                <li><a class="button" href="admin_catagrory.html">カテゴリー</a></li>
+                <li><a class="button" href="admin_introduction.html">自己紹介</a></li>
+            </ul>
+
+            <dev>
+                <form class="search-form" action="/search" method="GET">
+                    <input type="text" name="query" placeholder="このブログを検索する">
+                    <button type="submit">クリック ❤</button>
+                </form>
+            </dev>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <h2>11111111111111</h2>
+            <p>222222222222222222222222222222222222222222222222222222222222222222222222222</p>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2023 JUTTA. All rights reserved.</p>
+        <p>访问次数：<span th:text="${visitCount}"></span></p>
+
+    </footer>
+
+
+</body>
+
+
+</html>

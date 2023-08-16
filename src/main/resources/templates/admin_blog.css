@@ -1,0 +1,109 @@
+body,
+h1,
+h2,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* h1大标题blog鼠标悬停显示文字 */
+
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+header {
+    background-color: #333333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+
+/* 首页导航栏的按钮样式 */
+
+.button-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.button-list li {
+    margin-right: 1.5rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #2ab89e;
+}
+
+
+
+
+/* Article styles */
+article {
+    padding: 2rem;
+}
+
+article h2 {
+    margin-bottom: 1rem;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+/* 搜索栏 */
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.search-form input[type="text"] {
+    padding: 0.5rem;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    outline: none;
+}
+
+.search-form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+    background-color: #2ab89e;
+    /* 悬停 */
+}
