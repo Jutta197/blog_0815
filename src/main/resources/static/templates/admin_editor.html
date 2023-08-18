@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ブログエディター</title>
+    <link rel="stylesheet" href="/static/css/admin_editor.css">
+</head>
+
+<body>
+    <h1>ブログエディター</h1>
+
+    <form th:action="@{/editor}" th:object="${blog}" method="post" enctype="multipart/form-data">
+        <label for="blogTitle">ブログタイトル：</label><br>
+        <input type="text" id="blogTitle" th:field="*{blogTitle}" required><br><br>
+
+        <label for="categoryName">カテゴリ名：</label><br>
+        <input type="text" id="categoryName" th:field="*{categoryName}" required><br><br>
+
+        <label for="blogImage">ブログ画像のアップロード：</label><br>
+        <input type="file" id="blogImage" name="blogImage" accept="image/*" required><br>
+        <!-- 把上传的图片发给后端 -->
+        <img th:if="${blog.blogImage}" th:src="${blog.blogImage}" alt="Uploaded Image"
+            style="max-width: 300px; display: none;"><br>
+
+        <!-- 显示上传的图片 -->
+        <img id="uploadedImage" src="#" alt="Uploaded Image"
+            style="max-width: 300px; max-height: 300px; display: block;">
+        <script>
+            const blogImage = document.getElementById('blogImage');
+            const uploadedImage = document.getElementById('uploadedImage');
+
+            blogImage.addEventListener('change', function () {
+                const selectedImage = blogImage.files[0];
+                if (selectedImage) {
+                    uploadedImage.src = URL.createObjectURL(selectedImage);
+                }
+            });
+        </script>
+        <br><br>
+
+        <label for="article">記事：</label><br>
+        <textarea id="article" th:field="*{article}" rows="6" required></textarea><br><br>
+
+        <!-- 将登录用户的ID绑定到博客对象 -->
+        <input type="hidden" id="accountId" th:value="${loggedInUserId}" th:field="*{accountId}">
+
+        <button type="submit">送信</button>
+
+
+    </form>
+    <!-- 送信和削除按钮放在同一行 -->
+    <form th:action="@{/delete/{blogId}(blogId=${blog.blogId})}" method="post">
+        <button type="submit">削除</button>
+    </form>
+
+
+
+</body>
+
+</html>

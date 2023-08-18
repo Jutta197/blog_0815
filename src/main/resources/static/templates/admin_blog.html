@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="admin_blog.css">
+    <link rel="stylesheet" href="/static/css/admin_blog.css">
     <title>ブログ</title>
 </head>
 
@@ -35,7 +35,27 @@
     </main>
     <footer>
         <p>&copy; 2023 JUTTA. All rights reserved.</p>
-        <p>访问次数：<span th:text="${visitCount}"></span></p>
+        <!-- <p>访问次数：<span th:text="${visitCount}"></span></p> -->
+        <p>訪問回数：<span id="visitCount">読み込み中...</span></p>
+
+        <script>
+            // 訪問回数JS
+            function updateVisitCount() {
+                let visitCount = localStorage.getItem('visitCount');
+                if (visitCount === null) {
+                    visitCount = 1;
+                } else {
+                    visitCount = parseInt(visitCount) + 1;
+                }
+
+                localStorage.setItem('visitCount', visitCount);
+                const visitCountElement = document.getElementById('visitCount');
+                visitCountElement.textContent = visitCount;
+            }
+
+            // ブラウザの local ストレージ に保存
+            window.onload = updateVisitCount;
+        </script>
 
     </footer>
 
