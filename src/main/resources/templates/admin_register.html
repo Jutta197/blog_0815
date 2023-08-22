@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>レジスター</title>
+    <link rel="stylesheet" th:href="@{/css/register.css}">
+    <!-- 添加 CSRF 令牌 -->
+    <!-- <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" /> -->
+
+
+</head>
+
+<body>
+    <div class="container">
+        <form th:action="@{/register/process}" method="post">
+            <h1>レジスター</h1>
+            <label for="accountName">名前</label>
+            <input type="text" id="accountName" name="accountName" placeholder="名前を入力" required>
+            <label for="accountEmail">メールアドレス</label>
+            <input type="text" id="accountEmail" name="accountEmail" placeholder="メールアドレスを入力" required>
+            <label for="password">パスワード</label>
+            <input type="password" id="password" name="password" placeholder="パスワードを入力">
+            <input type="submit" value="登録" id="submit-button">
+        </form>
+
+    </div>
+</body>
+
+</html>

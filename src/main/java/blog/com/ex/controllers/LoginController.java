@@ -13,12 +13,12 @@ import blog.com.ex.services.AccountService;
 @Controller
 public class LoginController {
 	@Autowired
-	private AccountService adminService;
+	private AccountService accountService;
 	
 	//ログイン画面を表示させる
 	@GetMapping("/login")
 	public String getLoginPage() {
-		return "admin_login.html";
+		return "admin_login";
 	}
 	
 	//ログイン処理
@@ -26,12 +26,12 @@ public class LoginController {
 	public String login(@RequestParam String accountEmail,
 			@RequestParam String accountPassword,
 			Model model) {
-		if(adminService.loginCheck(accountEmail, accountPassword)) {
+		if(accountService.loginCheck(accountEmail, accountPassword)) {
 			model.addAttribute("email",accountEmail);
 			model.addAttribute("password",accountPassword);
-			return "admin_blog.html";
+			return "admin_blog";
 		}else {
-			return "admin_login.html";
+			return "admin_login";
 		}
 	}
 }

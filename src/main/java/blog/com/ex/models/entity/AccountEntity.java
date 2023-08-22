@@ -24,7 +24,7 @@ public class AccountEntity {
     @Column(name = "password")
     private String password; // 
     
-    // Getters, setters, constructors...
+    // 
 
 	public AccountEntity() {
 		
