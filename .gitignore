@@ -34,3 +34,8 @@ build/
 
 # gitignore忽略.history文件夹
 .history/
+
+# Ignore Maven Wrapper files
+.mvn/wrapper/
+mvnw
+mvnw.cmd
