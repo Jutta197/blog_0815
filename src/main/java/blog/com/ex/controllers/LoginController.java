@@ -17,9 +17,16 @@ public class LoginController {
 	
 	//ログイン画面を表示させる
 	@GetMapping("/login")
-	public String getLoginPage() {
-		return "admin_login";
+	public String loginPage() {
+		return "account_login";
 	}
+	
+	//閲覧者
+	@GetMapping("/blog")
+	public String lookPage() {
+		return "blog";
+	}
+	
 	
 	//ログイン処理
 	@PostMapping("/login/process")
@@ -29,9 +36,9 @@ public class LoginController {
 		if(accountService.loginCheck(accountEmail, accountPassword)) {
 			model.addAttribute("email",accountEmail);
 			model.addAttribute("password",accountPassword);
-			return "admin_blog";
+			return "account_blog";
 		}else {
-			return "admin_login";
+			return "account_login";
 		}
 	}
 }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/account_blog.css">
+    <title>カテゴリー</title>
+</head>
+
+<body>
+    <header>
+        <h1>カテゴリー</h1>
+        <nav>
+            <ul class="button-list">
+                <li><a class="button" href="account_blog.html">ホーム</a></li>
+                <li><a class="button" href="account_catagrory.html">カテゴリー</a></li>
+                <li><a class="button" href="account_introduction.html">自己紹介</a></li>
+            </ul>
+            <div>
+                <form class="search-form" action="/search" method="GET">
+                    <input type="text" name="query" placeholder="このブログを検索する">
+                    <button type="submit">クリック ❤</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="category">
+            <h2>カテゴリー名</h2>
+            <ul>
+                <li><a href="#">記事1</a></li>
+                <li><a href="#">記事2</a></li>
+                <li><a href="#">記事3</a></li>
+                <!-- 可以添加更多文章链接 -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 JUTTA. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

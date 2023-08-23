@@ -17,7 +17,7 @@ public class RegisterController {
 	@GetMapping("/register")
 	public String registerPage() {
 		
-		return "admin_register";
+		return "account_register";
 	}
 	//登録処理をする
 	@PostMapping("/register/process")
@@ -28,9 +28,9 @@ public class RegisterController {
 		System.out.println("Register method called.");
 		
 		if(accountService.createAccount(accountEmail, accountName, password)) {
-			return "admin_login";
+			return "account_login";
 		}else {
-			return "admin_register";
+			return "account_register";
 		}
 		
 		
